@@ -1,0 +1,24 @@
+# Environnement Python
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+
+# Fichiers temporaires et sauvegardes
+*.bak
+*.log
+.DS_Store
+
+# Secrets et configurations locales
+.env
+.env.*
+!.env.example
+.streamlit/secrets.toml
+secrets.toml
+
+# Données médicales et fichiers générés
+data/
+datasets/
+patient_data/
+reports/
+generated_reports/

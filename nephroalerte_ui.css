@@ -1,0 +1,280 @@
+:root {
+  color-scheme: light;
+  --navy: #244B78;
+  --blue: #36639D;
+  --blue-soft: #EAF1F8;
+  --green: #145A45;
+  --green-secondary: #1E765A;
+  --bg: #F4F7FB;
+  --surface: #FFFFFF;
+  --text: #18324B;
+  --muted: #526579;
+  --border: #D5E0EA;
+  --low: #216B4A;
+  --moderate: #875500;
+  --high: #A92B25;
+  --shadow: 0 4px 16px rgba(21, 59, 91, .055);
+  --radius: 12px;
+}
+
+/* Application shell */
+.stApp {
+  --primary-color: #36639D;
+  --background-color: #F4F7FB;
+  --secondary-background-color: #EAF1F8;
+  --text-color: #18324B;
+  --border-color: #D5E0EA;
+  background: var(--bg); color: var(--text); color-scheme: light;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+.block-container { max-width: 1440px; padding: 1.4rem clamp(1rem, 3vw, 2.5rem) 2.5rem; }
+header[data-testid="stHeader"], div[data-testid="stToolbar"], #MainMenu { visibility: hidden; }
+section[data-testid="stSidebar"] { background: #F8FAFC; border-right: 1px solid var(--border); }
+.stApp p, .stApp li { color: var(--text); line-height: 1.55; }
+.stApp h1, .stApp h2, .stApp h3, .stApp h4 { color: var(--navy); letter-spacing: -.018em; }
+.stCaption, div[data-testid="stCaptionContainer"] { color: var(--muted); }
+
+/* Product identity and navigation */
+.brand-title { color: var(--navy); font-size: 1.4rem; line-height: 1.15; font-weight: 800; }
+.brand-subtitle, .header-role { color: var(--muted); font-size: .88rem; }
+.header-user { color: var(--text); text-align: right; font-weight: 700; }
+.sidebar-meta { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: .8rem; margin-top: .8rem; }
+.sidebar-meta p { margin: .2rem 0; color: var(--text); font-size: .84rem; }
+
+/* Dashboard and content cards */
+.hero-panel, .content-panel, .login-panel { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); box-shadow: var(--shadow); padding: 1.15rem 1.25rem; }
+.hero-panel { border-left: 4px solid var(--blue); }
+.eyebrow { color: var(--green); font-size: .74rem; font-weight: 750; letter-spacing: .075em; text-transform: uppercase; }
+.hero-title { color: var(--navy); font-size: clamp(1.55rem, 2.5vw, 2.2rem); line-height: 1.18; font-weight: 800; margin: .35rem 0 .5rem; }
+.hero-copy { color: var(--muted); max-width: 760px; }
+.section-title { color: var(--navy); font-size: 1.05rem; font-weight: 750; margin: 0 0 .65rem; }
+.step-heading { display: flex; align-items: center; gap: .8rem; padding: .8rem 0 1rem; }
+.step-index { display: grid; place-items: center; flex: 0 0 2.4rem; height: 2.4rem; border-radius: 50%; background: var(--blue-soft); color: var(--blue); font-weight: 800; }
+.step-heading .section-title { margin: 0; }
+.step-copy { color: var(--muted); font-size: .86rem; }
+.form-section-title { color: var(--navy); font-size: .92rem; font-weight: 750; border-bottom: 1px solid var(--border); padding: .7rem 0 .45rem; margin: .3rem 0 .55rem; }
+.result-heading { margin: 1rem 0 .65rem; }
+.kpi-card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: .85rem .95rem; min-height: 104px; }
+.kpi-label { color: var(--muted); font-size: .8rem; font-weight: 650; margin-bottom: .45rem; }
+.kpi-value { color: var(--navy); font-size: clamp(1.25rem, 2vw, 1.7rem); line-height: 1.12; font-weight: 800; overflow-wrap: anywhere; }
+.kpi-help { color: var(--muted); font-size: .76rem; margin-top: .4rem; }
+.risk-pill { display: inline-flex; align-items: center; border-radius: 999px; padding: .2rem .6rem; font-weight: 700; font-size: .76rem; border: 1px solid transparent; white-space: nowrap; }
+.risk-low { color: var(--low); background: #E8F4ED; border-color: #BFDDCB; }
+.risk-medium { color: var(--moderate); background: #FFF3D9; border-color: #E9D29C; }
+.risk-high { color: var(--high); background: #FCE9E6; border-color: #E7B9B3; }
+.empty-note { color: var(--muted); font-size: .9rem; }
+
+/* Authentication */
+.login-wrap { max-width: 520px; margin: 1.2rem auto 0; }
+.login-title { color: var(--navy); text-align: center; font-size: 1.9rem; font-weight: 800; margin: .3rem 0; }
+.login-subtitle { color: var(--muted); text-align: center; margin-bottom: 1.1rem; }
+
+/* Streamlit input widgets */
+div[data-testid="stForm"], div[data-testid="stVerticalBlockBorderWrapper"] { border: 1px solid var(--border); border-radius: var(--radius); background: var(--surface); box-shadow: var(--shadow); }
+div[data-testid="stWidgetLabel"] p { color: var(--text) !important; font-weight: 600; }
+div[data-testid="stTextInput"] input, div[data-testid="stNumberInput"] input,
+div[data-testid="stDateInput"] input, div[data-testid="stTextArea"] textarea,
+div[data-testid="stTextInput"] [data-baseweb="input"] > div,
+div[data-testid="stNumberInput"] [data-baseweb="input"] > div,
+div[data-testid="stDateInput"] [data-baseweb="input"] > div,
+div[data-testid="stTextArea"] [data-baseweb="textarea"] > div {
+  background: var(--surface) !important; background-color: var(--surface) !important;
+  color: var(--text) !important; -webkit-text-fill-color: var(--text);
+  border-color: var(--border) !important; border-radius: 7px;
+}
+div[data-testid="stTextInput"] input::placeholder, div[data-testid="stTextArea"] textarea::placeholder { color: var(--muted) !important; -webkit-text-fill-color: var(--muted); }
+div[data-testid="stTextInput"]:hover input, div[data-testid="stNumberInput"]:hover input,
+div[data-testid="stDateInput"]:hover input, div[data-testid="stTextArea"]:hover textarea,
+div[data-testid="stTextInput"] [data-baseweb="input"] > div:hover,
+div[data-testid="stNumberInput"] [data-baseweb="input"] > div:hover,
+div[data-testid="stDateInput"] [data-baseweb="input"] > div:hover,
+div[data-testid="stTextArea"] [data-baseweb="textarea"] > div:hover { border-color: #9EB3C7 !important; }
+div[data-testid="stTextInput"] input:focus, div[data-testid="stNumberInput"] input:focus,
+div[data-testid="stDateInput"] input:focus, div[data-testid="stTextArea"] textarea:focus { background: #FFFFFF !important; }
+div[data-testid="stTextInput"] input:disabled, div[data-testid="stNumberInput"] input:disabled,
+div[data-testid="stDateInput"] input:disabled, div[data-testid="stTextArea"] textarea:disabled {
+  background: var(--blue-soft) !important; color: var(--muted) !important; -webkit-text-fill-color: var(--muted) !important; opacity: 1;
+}
+
+/* Closed select fields: the select control is mounted inside the widget. */
+div[data-testid="stSelectbox"] [data-baseweb="select"] > div,
+div[data-testid="stMultiSelect"] [data-baseweb="select"] > div {
+  background: #FFFFFF !important; background-color: #FFFFFF !important;
+  color-scheme: light; border: 1px solid #D5E0EA !important; border-radius: 7px;
+}
+div[data-testid="stSelectbox"] [data-baseweb="select"]:hover > div,
+div[data-testid="stMultiSelect"] [data-baseweb="select"]:hover > div { border-color: #9EB3C7 !important; }
+div[data-testid="stSelectbox"] [data-baseweb="select"]:focus-within > div,
+div[data-testid="stMultiSelect"] [data-baseweb="select"]:focus-within > div {
+  border-color: #36639D !important; box-shadow: 0 0 0 1px #36639D !important;
+}
+div[data-testid="stSelectbox"] [data-baseweb="select"] span,
+div[data-testid="stSelectbox"] [data-baseweb="select"] div,
+div[data-testid="stSelectbox"] [data-baseweb="select"] input,
+div[data-testid="stMultiSelect"] [data-baseweb="select"] span,
+div[data-testid="stMultiSelect"] [data-baseweb="select"] div,
+div[data-testid="stMultiSelect"] [data-baseweb="select"] input,
+div[data-testid="stSelectbox"] [class*="singleValue"],
+div[data-testid="stSelectbox"] [class*="single-value"] {
+  color: #18324B !important; -webkit-text-fill-color: #18324B !important;
+}
+div[data-testid="stSelectbox"] [data-baseweb="select"] [class*="placeholder"],
+div[data-testid="stSelectbox"] [data-baseweb="select"] input::placeholder,
+div[data-testid="stMultiSelect"] [data-baseweb="select"] [class*="placeholder"] {
+  color: #526579 !important; -webkit-text-fill-color: #526579 !important; opacity: 1 !important;
+}
+div[data-testid="stSelectbox"] [data-baseweb="select"] svg,
+div[data-testid="stMultiSelect"] [data-baseweb="select"] svg { color: #36639D !important; fill: #36639D !important; }
+div[data-testid="stSelectbox"] [data-baseweb="select"][aria-disabled="true"] > div,
+div[data-testid="stMultiSelect"] [data-baseweb="select"][aria-disabled="true"] > div {
+  background: #EAF1F8 !important; color: #526579 !important; opacity: 1;
+}
+div[data-testid="stMultiSelect"] [data-baseweb="tag"] { background: var(--blue-soft) !important; color: var(--navy) !important; }
+div[data-testid="stMultiSelect"] [data-baseweb="tag"] span { color: var(--navy) !important; }
+
+/* Open menus are rendered in a portal, outside stSelectbox. Keep these rules scoped to BaseWeb's menu DOM. */
+div[data-baseweb="popover"] [role="listbox"],
+div[data-baseweb="popover"] [data-baseweb="menu"],
+div[data-baseweb="popover"] ul[data-baseweb="menu"],
+div[data-testid="stSelectboxVirtualDropdown"] {
+  background: #FFFFFF !important; background-color: #FFFFFF !important;
+  color-scheme: light; color: #18324B !important; border: 1px solid #D5E0EA; border-radius: 8px; box-shadow: var(--shadow);
+}
+div[data-baseweb="popover"] [role="option"],
+div[data-baseweb="popover"] [data-baseweb="menu"] li,
+div[data-testid="stSelectboxVirtualDropdown"] [role="option"] {
+  background: #FFFFFF !important; background-color: #FFFFFF !important;
+  color: #18324B !important; -webkit-text-fill-color: #18324B !important;
+}
+div[data-baseweb="popover"] [role="option"] span,
+div[data-baseweb="popover"] [role="option"] div,
+div[data-baseweb="popover"] [role="option"] p,
+div[data-baseweb="popover"] [data-baseweb="menu"] li span,
+div[data-testid="stSelectboxVirtualDropdown"] [role="option"] span,
+div[data-testid="stSelectboxVirtualDropdown"] [role="option"] div,
+div[data-testid="stSelectboxVirtualDropdown"] [role="option"] p {
+  color: #18324B !important; -webkit-text-fill-color: #18324B !important;
+}
+div[data-baseweb="popover"] [role="option"]:hover,
+div[data-baseweb="popover"] [data-baseweb="menu"] li:hover,
+div[data-testid="stSelectboxVirtualDropdown"] [role="option"]:hover {
+  background: #EAF1F8 !important; background-color: #EAF1F8 !important;
+  color: #18324B !important; -webkit-text-fill-color: #18324B !important;
+}
+div[data-baseweb="popover"] [role="option"][aria-selected="true"],
+div[data-testid="stSelectboxVirtualDropdown"] [role="option"][aria-selected="true"] {
+  background: #36639D !important; background-color: #36639D !important;
+  color: #FFFFFF !important; -webkit-text-fill-color: #FFFFFF !important;
+}
+div[data-baseweb="popover"] [role="option"][aria-selected="true"] span,
+div[data-baseweb="popover"] [role="option"][aria-selected="true"] div,
+div[data-testid="stSelectboxVirtualDropdown"] [role="option"][aria-selected="true"] span,
+div[data-testid="stSelectboxVirtualDropdown"] [role="option"][aria-selected="true"] div {
+  color: #FFFFFF !important; -webkit-text-fill-color: #FFFFFF !important;
+}
+div[data-baseweb="popover"] [role="option"] svg,
+div[data-testid="stSelectboxVirtualDropdown"] [role="option"] svg { color: currentColor !important; fill: currentColor !important; }
+
+/* Date picker calendar surface and its BaseWeb input */
+div[data-testid="stDateInput"] [data-baseweb="datepicker"] > div { background: var(--surface) !important; }
+div[data-baseweb="calendar"], div[data-baseweb="calendar"] * { color: var(--text); }
+div[data-baseweb="calendar"] { background: var(--surface) !important; color-scheme: light; }
+div[data-baseweb="calendar"] button { background: var(--surface) !important; color: var(--text) !important; border-color: var(--border) !important; }
+div[data-testid="stDateInput"] [data-baseweb="input"] > div { background: #FFFFFF !important; color: #18324B !important; border-color: #D5E0EA !important; }
+div[data-testid="stDateInput"] [data-baseweb="input"] svg { color: #36639D !important; fill: #36639D !important; }
+div[data-baseweb="calendar"] button:not([aria-selected="true"]):hover { background: var(--blue-soft) !important; color: var(--navy) !important; }
+div[data-baseweb="calendar"] button[aria-selected="true"] { background: #36639D !important; color: #FFFFFF !important; }
+div[data-baseweb="calendar"] button[aria-selected="true"]:hover { background: #36639D !important; color: #FFFFFF !important; }
+div[data-baseweb="calendar"] button:active { background: #DCE8F3 !important; }
+div[data-baseweb="calendar"] button:focus-visible { outline: 2px solid var(--blue) !important; outline-offset: 1px; }
+
+/* Photo upload: drop zone, instructions, and the internal Browse files button */
+div[data-testid="stFileUploader"], [data-testid="stFileUploaderDropzone"] {
+  background: #F8FBFD !important; color: var(--text) !important; border-color: var(--border) !important;
+}
+div[data-testid="stFileUploader"] section, [data-testid="stFileUploaderDropzone"] {
+  background: #F8FBFD !important; border: 1px dashed #AFC3D3 !important; border-radius: 8px;
+}
+div[data-testid="stFileUploader"] p, div[data-testid="stFileUploader"] span,
+div[data-testid="stFileUploader"] small, div[data-testid="stFileUploaderDropzoneInstructions"] {
+  color: var(--text) !important; -webkit-text-fill-color: var(--text);
+}
+div[data-testid="stFileUploader"] button, [data-testid="stFileUploaderDropzone"] button {
+  background: var(--green) !important; background-color: var(--green) !important;
+  color: #FFFFFF !important; -webkit-text-fill-color: #FFFFFF !important;
+  border: 1px solid var(--green) !important; border-radius: 7px !important; opacity: 1 !important;
+}
+div[data-testid="stFileUploader"] button:hover, [data-testid="stFileUploaderDropzone"] button:hover { background: var(--green-secondary) !important; background-color: var(--green-secondary) !important; }
+div[data-testid="stFileUploader"] button:active, [data-testid="stFileUploaderDropzone"] button:active { filter: brightness(.9); }
+div[data-testid="stFileUploader"] button:focus-visible, [data-testid="stFileUploaderDropzone"] button:focus-visible,
+div[data-testid="stFileUploader"] [tabindex="0"]:focus-visible { outline: 3px solid rgba(54,99,157,.38) !important; outline-offset: 2px; }
+div[data-testid="stFileUploader"] button:disabled, [data-testid="stFileUploaderDropzone"] button:disabled {
+  background: var(--blue-soft) !important; background-color: var(--blue-soft) !important;
+  color: var(--muted) !important; -webkit-text-fill-color: var(--muted) !important;
+  border-color: var(--border) !important; opacity: 1 !important; cursor: not-allowed;
+}
+div[data-testid="stFileUploader"] button span, [data-testid="stFileUploaderDropzone"] button span { color: #FFFFFF !important; -webkit-text-fill-color: #FFFFFF !important; }
+
+/* Buttons used by Streamlit, including form submits and downloads */
+.stButton button, .stDownloadButton button, .stFormSubmitButton button {
+  border-radius: 8px !important; font-weight: 650; min-height: 2.6rem;
+  background: var(--blue-soft) !important; background-color: var(--blue-soft) !important;
+  border: 1px solid var(--border) !important; color: var(--navy) !important;
+  -webkit-text-fill-color: var(--navy) !important; opacity: 1 !important;
+}
+.stButton button[data-testid="stBaseButton-primary"], .stFormSubmitButton button[data-testid="stBaseButton-primary"],
+.stButton button[kind="primary"], .stFormSubmitButton button[kind="primary"], .stDownloadButton button {
+  background: var(--blue) !important; background-color: var(--blue) !important;
+  border-color: var(--blue) !important; color: #FFFFFF !important; -webkit-text-fill-color: #FFFFFF !important;
+}
+.stButton button:hover, .stDownloadButton button:hover, .stFormSubmitButton button:hover { filter: brightness(.96); }
+.stButton button:active, .stDownloadButton button:active, .stFormSubmitButton button:active { filter: brightness(.90); transform: translateY(1px); }
+.stButton button:focus-visible, .stDownloadButton button:focus-visible, .stFormSubmitButton button:focus-visible,
+div[data-testid="stTextInput"] input:focus-visible, div[data-testid="stTextArea"] textarea:focus-visible,
+div[data-testid="stNumberInput"] input:focus-visible, div[data-testid="stDateInput"] input:focus-visible {
+  outline: 3px solid rgba(54,99,157,.38) !important; outline-offset: 2px;
+}
+.stButton button:disabled, .stDownloadButton button:disabled, .stFormSubmitButton button:disabled {
+  background: var(--blue-soft) !important; background-color: var(--blue-soft) !important;
+  color: var(--muted) !important; -webkit-text-fill-color: var(--muted) !important;
+  border-color: var(--border) !important; opacity: 1 !important; cursor: not-allowed;
+}
+
+/* Profile popover trigger: render_profile_menu() creates it with st.popover(user['name']). */
+div[data-testid="stPopover"] > button, [data-testid="stPopover"] button[data-testid="stPopoverButton"],
+button[data-testid="stPopoverButton"] {
+  background: var(--blue-soft) !important; background-color: var(--blue-soft) !important;
+  color: var(--navy) !important; -webkit-text-fill-color: var(--navy) !important;
+  border: 1px solid var(--border) !important; border-radius: 8px !important; opacity: 1 !important;
+}
+button[data-testid="stPopoverButton"] span { color: var(--navy) !important; -webkit-text-fill-color: var(--navy) !important; }
+div[data-testid="stPopover"] > button:hover, button[data-testid="stPopoverButton"]:hover { background: #DCE8F3 !important; background-color: #DCE8F3 !important; }
+div[data-testid="stPopover"] > button:active, button[data-testid="stPopoverButton"]:active { background: #D1E0EF !important; background-color: #D1E0EF !important; }
+div[data-testid="stPopover"] > button:focus-visible, button[data-testid="stPopoverButton"]:focus-visible { outline: 3px solid rgba(54,99,157,.38) !important; outline-offset: 2px; }
+div[data-testid="stPopover"] > button:disabled, button[data-testid="stPopoverButton"]:disabled {
+  background: var(--blue-soft) !important; color: var(--muted) !important; -webkit-text-fill-color: var(--muted) !important; opacity: 1 !important;
+}
+div[data-testid="stTabs"] button[role="tab"] { color: var(--muted); font-weight: 650; padding: .65rem .9rem; }
+div[data-testid="stTabs"] button[role="tab"][aria-selected="true"] { color: var(--blue); border-bottom-color: var(--blue); }
+div[data-testid="stMetric"] { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: .75rem .9rem; }
+div[data-testid="stMetric"] label { color: var(--muted); }
+div[data-testid="stMetricValue"] { color: var(--navy); font-weight: 800; }
+div[data-testid="stAlert"] { border-radius: 9px; }
+table thead tr th { background: var(--navy); color: white; }
+table tbody tr td { color: var(--text); }
+table tbody tr:nth-child(even) td { background: #F5F8FA; }
+
+@media (max-width: 900px) {
+  .block-container { padding-top: 1rem; }
+  div[data-testid="stHorizontalBlock"] { gap: .7rem; }
+  .kpi-card { min-height: 94px; padding: .75rem; }
+}
+@media (max-width: 600px) {
+  .block-container { padding-left: .8rem; padding-right: .8rem; }
+  .hero-panel, .content-panel, .login-panel { padding: .9rem; }
+  .header-user { text-align: left; }
+  .stButton > button, .stDownloadButton > button { width: 100%; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; }
+}
